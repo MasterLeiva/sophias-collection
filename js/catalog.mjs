@@ -22,7 +22,7 @@ export const imagesOf = (p) => [p.image, ...(p.colors || []).map((c) => c.image)
 // Accepts only known fields, with sane types. `imageExists(path)` says whether a photo path is real.
 export function cleanProduct(input, existing, imageExists) {
   const out = { ...existing };
-  const str = (v, max) => String(v ?? "").trim().slice(0, max);
+  const str = (v, max) => String(v ?? "").normalize("NFC").trim().slice(0, max);
   const num = (v) => { const n = Number(String(v).replace(/,/g, "")); return Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : null; };
   const validImage = (v) => { const img = str(v, 300); return img.startsWith("img/") && !img.includes("..") && imageExists(img) ? img : null; };
   if ("name" in input) out.name = str(input.name, 120);
@@ -60,10 +60,11 @@ export function newProduct(input, list, imageExists) {
 // "Nombre L1,234.jpeg" → new product. "Nombre (Color) L1,234.jpeg" → a color of the product
 // "Nombre" when it already exists in that category. Mutates `list`; returns the touched products.
 export function importImages(list, paths) {
-  const known = new Set(list.flatMap(imagesOf));
+  const known = new Set(list.flatMap(imagesOf).map((i) => i.normalize("NFC")));
   const added = [];
+  // NFC so "ñ"/accents match how GitHub stores file names (a Mac lists them decomposed).
   const files = paths
-    .map((image) => image.split("/"))
+    .map((image) => image.normalize("NFC").split("/"))
     .filter((parts) => parts.length === 3 && parts[0] === "img" && !SKIP_DIRS.has(parts[1]) && !parts[1].startsWith(".") && !parts[2].startsWith("."))
     .sort((a, b) => a.join("/").localeCompare(b.join("/"), "es"));
   for (const [, category, file] of files) {

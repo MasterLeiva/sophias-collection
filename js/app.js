@@ -9,7 +9,8 @@
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const money = (n) => "L " + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-const src = (path) => encodeURI(path);
+// NFC: a Mac writes "ñ" as "n" + tilde, GitHub stores it as one "ñ"; always ask for the latter.
+const src = (path) => encodeURI(String(path).normalize("NFC"));
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const byId = (id) => window.PRODUCTS.find((p) => p.id === id);
 const productUrl = (p) => `product.html?id=${encodeURIComponent(p.id)}`;

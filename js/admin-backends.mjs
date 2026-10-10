@@ -4,7 +4,7 @@
 //                   Each save is a commit; GitHub Pages republishes the store in 1–2 minutes.
 import { cleanProduct, imagesOf, importImages, newProduct, slugify } from "./catalog.mjs";
 
-const encodePath = (p) => p.split("/").map(encodeURIComponent).join("/");
+const encodePath = (p) => p.normalize("NFC").split("/").map(encodeURIComponent).join("/");
 const storage = {
   get(k) { try { return localStorage.getItem(k); } catch { return null; } },
   set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} },
@@ -42,7 +42,7 @@ export class LocalBackend {
       method: "POST", body: blob, headers: { "Content-Type": "image/jpeg", "X-Filename": encodeURIComponent(label).slice(0, 80) },
     })).image;
   }
-  imageUrl(path) { return encodeURI(path); }
+  imageUrl(path) { return encodeURI(path.normalize("NFC")); }
 }
 
 // ---- GitHub -------------------------------------------------------------------------
