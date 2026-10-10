@@ -46,9 +46,9 @@ App.ready.then(() => {
           <button class="pdp__wish ${wish() ? "is-on" : ""}" data-wish="${esc(p.id)}" aria-pressed="${wish()}" aria-label="Agregar a favoritos">${ICONS.heart}</button>
         </div>
         <button class="btn btn--dark btn--block js-add">Agregar al carrito</button>
-        <button class="btn btn--ig btn--block js-buy">${icon("instagram", 20)} Pedir por Instagram</button>
+        <button class="btn btn--whatsapp btn--block js-buy">${icon("whatsapp", 20)} Pedir por WhatsApp</button>
         <div class="pdp__accordion">
-          <details open><summary>Cómo comprar</summary><p>Agrega tus productos al carrito y toca “Hacer pedido por Instagram”. Copiamos tu pedido para que lo pegues en nuestro chat, y te confirmamos disponibilidad, forma de pago y envío.</p></details>
+          <details open><summary>Cómo comprar</summary><p>Agrega tus productos al carrito y toca “Hacer pedido por WhatsApp”. Se abre nuestro chat con tu pedido ya escrito: solo envíalo y te confirmamos disponibilidad, forma de pago y envío.</p></details>
           <details><summary>Envíos</summary><p>Realizamos envíos a toda Honduras. El costo y tiempo de entrega se coordinan al confirmar tu pedido.</p></details>
         </div>
       </div>
@@ -57,7 +57,7 @@ App.ready.then(() => {
   $(".js-minus").onclick = () => { qty = Math.max(1, qty - 1); $(".js-qty").textContent = qty; };
   $(".js-plus").onclick = () => { qty += 1; $(".js-qty").textContent = qty; };
   $(".js-add").onclick = () => { Cart.add(p.id, qty, color); openCart(); };
-  $(".js-buy").onclick = () => showOrder([{ product: p, qty, color }]);
+  $(".js-buy").onclick = () => sendOrder([{ product: p, qty, color }]);
 
   // Tapping a color swaps the photo and remembers it in the URL (for sharing).
   pdp.addEventListener("click", (e) => {

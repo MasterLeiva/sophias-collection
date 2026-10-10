@@ -37,7 +37,7 @@ App.ready.then(() => {
     const title = view ? view.title : state.cat || "Ver todo";
     $(".js-shop-title").textContent = title;
     $(".js-shop-eyebrow").textContent = view ? view.eyebrow : "Tienda";
-    $(".js-shop-desc").textContent = view ? view.desc : "Pedidos por Instagram · Envíos a toda Honduras";
+    $(".js-shop-desc").textContent = view ? view.desc : "Pedidos por WhatsApp · Envíos a toda Honduras";
     document.title = `${title} — ${CONFIG.storeName}`;
 
     const chip = (label, attrs, on) => `<button class="chip ${on ? "is-active" : ""}" ${attrs}>${label}</button>`;

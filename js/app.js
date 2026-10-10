@@ -41,13 +41,16 @@ const ICONS = {
   chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H8l-4 4V5Z"/></svg>',
   sparkle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>',
   instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></svg>',
-  copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>',
+  whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2l-.5-.3Z"/></svg>',
 };
 const icon = (name, size) => ICONS[name].replace("<svg", `<svg width="${size}" height="${size}"`);
 
-// ---- Instagram ----------------------------------------------------------------
+// ---- Contact: orders on WhatsApp, Instagram to follow ---------------------------------
 const igProfile = () => `https://www.instagram.com/${CONFIG.instagram}/`;
-const igChat = () => `https://ig.me/m/${CONFIG.instagram}`;
+const waLink = (text) => `https://wa.me/${CONFIG.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+const waGreeting = () => `¡Hola ${CONFIG.storeName}! Tengo una consulta.`;
+// "50431423808" → "+504 3142-3808"
+const waDisplay = () => String(CONFIG.whatsapp).replace(/^(504)(\d{4})(\d{4})$/, "+$1 $2-$3");
 
 function orderMessage(lines) {
   const rows = lines.map((l) => `• ${l.qty} x ${l.product.name}${l.color ? ` — Color: ${l.color}` : ""} (${l.product.category}) — ${money(l.qty * priceOf(l.product))}`);
@@ -55,29 +58,9 @@ function orderMessage(lines) {
   return `¡Hola ${CONFIG.storeName}! Me gustaría hacer este pedido:\n\n${rows.join("\n")}\n\nTotal: ${money(total)}`;
 }
 
-// Copies text without awaiting, so the link that follows still counts as a user tap.
-// navigator.clipboard only exists on https/localhost; the textarea fallback covers the rest.
-function copyText(text) {
-  let ok = false;
-  const ta = document.createElement("textarea");
-  ta.value = text;
-  ta.setAttribute("readonly", "");
-  ta.style.cssText = "position:fixed;top:0;left:0;opacity:0;font-size:16px";
-  document.body.appendChild(ta);
-  ta.select();
-  ta.setSelectionRange(0, text.length);
-  try { ok = document.execCommand("copy"); } catch {}
-  ta.remove();
-  if (navigator.clipboard?.writeText) { navigator.clipboard.writeText(text).catch(() => {}); ok = true; }
-  return ok;
-}
-
-// Bottom sheet that shows the order, copies it, and opens the Instagram chat.
-function showOrder(lines) {
-  const text = orderMessage(lines);
-  const sheet = $(".js-order");
-  $(".js-order-text", sheet).textContent = text;
-  openPanel(sheet);
+// Opens WhatsApp (app on phones, WhatsApp Web on computers) with the order already written.
+function sendOrder(lines) {
+  window.open(waLink(orderMessage(lines)), "_blank", "noopener");
 }
 
 // ---- Cart & favorites state ---------------------------------------------------
@@ -171,6 +154,7 @@ function renderChrome() {
   const cats = window.CATEGORIES;
   const year = new Date().getFullYear();
   const igLink = (label, cls = "") => `<a class="${cls}" href="${igProfile()}" target="_blank" rel="noopener">${label}</a>`;
+  const waContact = (label, cls = "") => `<a class="${cls}" href="${waLink(waGreeting())}" target="_blank" rel="noopener">${label}</a>`;
 
   document.body.insertAdjacentHTML("afterbegin", `
     <a class="sr-only" href="#main">Saltar al contenido</a>
@@ -214,7 +198,8 @@ function renderChrome() {
           <li><a href="shop.html?view=favoritos">Favoritos ${ICONS.arrow}</a></li>
         </ul>
         <div class="menu-extra">
-          ${igLink(`${icon("instagram", 18)} @${esc(CONFIG.instagram)}`, "ig-link")}
+          ${waContact(`${icon("whatsapp", 18)} Escríbenos: ${esc(waDisplay())}`, "ig-link")}
+          ${igLink(`${icon("instagram", 18)} Síguenos: @${esc(CONFIG.instagram)}`, "ig-link")}
         </div>
       </div>
     </aside>
@@ -228,22 +213,6 @@ function renderChrome() {
       <div class="drawer__foot js-cart-foot"></div>
     </aside>
 
-    <div class="sheet js-order" role="dialog" aria-label="Hacer pedido" aria-hidden="true">
-      <div class="drawer__head">
-        <span class="drawer__title">Hacer pedido</span>
-        <button class="icon-btn js-close" aria-label="Cerrar">${ICONS.close}</button>
-      </div>
-      <div class="sheet__body">
-        <ol class="steps">
-          <li>Toca el botón para <strong>copiar tu pedido</strong> y abrir nuestro chat de Instagram.</li>
-          <li><strong>Pega</strong> el mensaje en el chat y envíalo.</li>
-          <li>Te confirmamos disponibilidad, pago y envío.</li>
-        </ol>
-        <pre class="order-text js-order-text"></pre>
-        <a class="btn btn--ig btn--block js-order-go" href="${igChat()}" target="_blank" rel="noopener">${icon("instagram", 20)} Copiar pedido y abrir Instagram</a>
-        <button class="btn btn--outline btn--block js-order-copy">${icon("copy", 18)} Solo copiar pedido</button>
-      </div>
-    </div>
 
     <div class="search-panel js-search" role="dialog" aria-label="Buscar" aria-hidden="true">
       <div class="search-panel__bar container">
@@ -262,7 +231,7 @@ function renderChrome() {
     <div class="container">
       <section class="usps" aria-label="Beneficios">
         <div class="usp"><span class="usp__icon">${ICONS.truck}</span><div><h4>Envíos a toda Honduras</h4><p>Recibe tu pedido en la puerta de tu casa</p></div></div>
-        <div class="usp"><span class="usp__icon">${ICONS.chat}</span><div><h4>Atención personalizada</h4><p>Te asesoramos por Instagram</p></div></div>
+        <div class="usp"><span class="usp__icon">${ICONS.chat}</span><div><h4>Atención personalizada</h4><p>Te asesoramos por WhatsApp</p></div></div>
         <div class="usp"><span class="usp__icon">${ICONS.sparkle}</span><div><h4>Marcas que amas</h4><p>Nuevos productos cada semana</p></div></div>
       </section>
     </div>
@@ -274,7 +243,7 @@ function renderChrome() {
             ${cats.map((c) => `<li><a href="${categoryUrl(c)}">${esc(c)}</a></li>`).join("")}
           </ul></details>
           <details><summary>Ayuda</summary><ul>
-            <li>${igLink("Contáctanos por Instagram")}</li>
+            <li>${waContact(`WhatsApp ${esc(waDisplay())}`)}</li>
             <li><a href="shop.html?view=favoritos">Mis favoritos</a></li>
           </ul></details>
           <div class="footer__ig">
@@ -289,7 +258,7 @@ function renderChrome() {
         </div>
       </div>
     </footer>
-    <a class="ig-float" href="${igChat()}" target="_blank" rel="noopener" aria-label="Escríbenos por Instagram">${ICONS.instagram}</a>
+    <a class="wa-float" href="${waLink(waGreeting())}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">${ICONS.whatsapp}</a>
   `);
 
   // Footer columns are always open on desktop.
@@ -349,15 +318,6 @@ function initPanels() {
   document.addEventListener("keydown", (e) => e.key === "Escape" && closePanel());
   $(".js-search-input").addEventListener("input", (e) => renderSearch(e.target.value));
 
-  // Order sheet: copy, then let the link open Instagram.
-  const orderText = () => $(".js-order-text").textContent;
-  $(".js-order-go").addEventListener("click", () => {
-    copyText(orderText());
-    toast("Pedido copiado · pégalo en el chat de Instagram");
-  });
-  $(".js-order-copy").addEventListener("click", () => {
-    toast(copyText(orderText()) ? "Pedido copiado ✓" : "Mantén presionado el texto para copiarlo");
-  });
 
   const header = $(".header");
   const onScroll = () => header.classList.toggle("is-scrolled", scrollY > 10);
@@ -418,9 +378,9 @@ function renderCart() {
   foot.innerHTML = `
     <div class="cart-total"><span>Subtotal</span><span>${money(Cart.total())}</span></div>
     <p class="cart-note">El envío se coordina al confirmar tu pedido.</p>
-    <button class="btn btn--ig btn--block js-checkout">${icon("instagram", 20)} Hacer pedido por Instagram</button>
+    <button class="btn btn--whatsapp btn--block js-checkout">${icon("whatsapp", 20)} Hacer pedido por WhatsApp</button>
     <a class="btn btn--outline btn--block" href="shop.html">Seguir comprando</a>`;
-  $(".js-checkout", foot).onclick = () => showOrder(Cart.lines());
+  $(".js-checkout", foot).onclick = () => sendOrder(Cart.lines());
 }
 
 function updateCounts() {

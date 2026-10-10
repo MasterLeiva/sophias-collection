@@ -11,6 +11,8 @@
 <p align="center">
   <a href="https://masterleiva.github.io/sophias-collection/"><b>🛍️ Visita nuestra tienda</b></a>
   &nbsp;·&nbsp;
+  <a href="https://wa.me/50431423808"><b>💬 WhatsApp +504 3142-3808</b></a>
+  &nbsp;·&nbsp;
   <a href="https://www.instagram.com/sophie_collection18/"><b>📸 Síguenos en Instagram</b></a>
 </p>
 
@@ -28,9 +30,10 @@
 ## ¿Cómo comprar?
 
 1. Entra a la [tienda](https://masterleiva.github.io/sophias-collection/) y agrega tus favoritos al carrito.
-2. Toca **“Hacer pedido por Instagram”**.
-3. Envíanos tu pedido por mensaje a [@sophie_collection18](https://www.instagram.com/sophie_collection18/).
-4. Te confirmamos disponibilidad, forma de pago y envío.
+2. Toca **“Hacer pedido por WhatsApp”**: se abre nuestro chat con tu pedido ya escrito.
+3. Envía el mensaje y te confirmamos disponibilidad, forma de pago y envío.
+
+¿Tienes dudas? Escríbenos por [WhatsApp al +504 3142-3808](https://wa.me/50431423808).
 
 ## Envíos
 
