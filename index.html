@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sophia's Collection — Perfumes, bolsos, lentes y más</title>
+  <meta name="description" content="Sophia's Collection: sets de perfumes, bolsos, calzado, lentes y makeup. Pedidos por Instagram con envíos a toda Honduras.">
+  <meta name="theme-color" content="#fad3e5">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main id="main">
+    <!-- Hero: rotating vertical videos (configure in data/site.json → heroSlides) -->
+    <section class="hero js-hero" aria-label="Destacados"></section>
+
+    <!-- Novedades / Más vendidos / Ofertas -->
+    <section class="section container reveal">
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" role="tab" aria-selected="true" data-tab="new">Novedades</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="best">Más vendidos</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="sale" hidden>Ofertas</button>
+      </div>
+      <div class="rail-head">
+        <h3 class="js-tab-subtitle">Lo último en llegar</h3>
+        <a class="link-arrow" href="shop.html">Ver todo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      </div>
+      <div class="rail js-product-rail"></div>
+    </section>
+
+    <!-- Shop by category -->
+    <section class="section container reveal" style="padding-top:0">
+      <h2 class="section-title" style="margin-bottom:20px">Compra por categoría</h2>
+      <div class="rail rail--collections js-collections"></div>
+    </section>
+
+    <!-- Split banners -->
+    <section class="banner-split js-split"></section>
+
+    <!-- Feature -->
+    <section class="feature js-feature"></section>
+
+    <!-- Two-up banner grid -->
+    <section class="section container">
+      <div class="banner-grid js-grid"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

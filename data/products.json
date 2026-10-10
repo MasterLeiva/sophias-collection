@@ -1,0 +1,650 @@
+[
+  {
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Carolina Herrera",
+    "category": "Bolsos",
+    "price": 2350,
+    "colors": [
+      {
+        "name": "Rojo vino",
+        "hex": "#6f000c",
+        "image": "img/Bolsos/carolina-herrera-rojo-vino-a7462d.jpg"
+      },
+      {
+        "name": "Cafe",
+        "hex": "#371700",
+        "image": "img/Bolsos/carolina-herrera-negro-a2c7bb.jpg"
+      }
+    ],
+    "image": "img/Bolsos/carolina-herrera-rojo-vino-a7462d.jpg",
+    "id": "bolsos-carolina-herrera",
+    "createdAt": "2026-10-10T17:21:23.839Z"
+  },
+  {
+    "salePrice": null,
+    "description": "4x30 ml",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "La Collection Des Parfums-Jardins",
+    "category": "Sets de Perfumes",
+    "price": 1999,
+    "image": "img/Sets de Perfumes/la-collection-des-parfums-jardins-647cf9.jpg",
+    "id": "sets-de-perfumes-la-collection-des-parfums-jardins",
+    "createdAt": "2026-10-10T17:16:29.726Z"
+  },
+  {
+    "salePrice": null,
+    "description": "10 ml cada uno",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "name": "Christmas Mini Perfumes Set",
+    "category": "Sets de Perfumes",
+    "price": 1750,
+    "image": "img/Sets de Perfumes/christmas-mini-perfumes-set-80acb7.jpg",
+    "id": "sets-de-perfumes-christmas-mini-perfumes-set",
+    "createdAt": "2026-10-10T17:13:32.567Z"
+  },
+  {
+    "salePrice": null,
+    "description": "4x30 ml",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Victoria’s Secret Travel Set",
+    "category": "Sets de Perfumes",
+    "price": 1995,
+    "image": "img/Sets de Perfumes/victoria-s-secret-travel-set-def8e2.jpg",
+    "id": "sets-de-perfumes-victoria-s-secret-travel-set",
+    "createdAt": "2026-10-10T17:12:17.480Z"
+  },
+  {
+    "id": "bolsos-bolso-coach",
+    "name": "Bolso Coach",
+    "category": "Bolsos",
+    "price": 2250,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Bolsos/Bolso Coach (Cafe) L2,250.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "colors": [
+      {
+        "name": "Cafe",
+        "hex": "#6f4e37",
+        "image": "img/Bolsos/Bolso Coach (Cafe) L2,250.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bolsos-tote-bag-gucci",
+    "name": "Tote Bag Gucci",
+    "category": "Bolsos",
+    "price": 2250,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Bolsos/Tote Bag Gucci (Blanco) L2,250.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "colors": [
+      {
+        "name": "Blanco",
+        "hex": "#ffffff",
+        "image": "img/Bolsos/Tote Bag Gucci (Blanco) L2,250.jpeg"
+      },
+      {
+        "name": "Negro",
+        "hex": "#1c1c1c",
+        "image": "img/Bolsos/Tote Bag Gucci (Negro) L2,250.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "calzado-christian-louboutin",
+    "name": "Christian Louboutin",
+    "category": "Calzado",
+    "price": 5900,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Calzado/Christian Louboutin L5,900.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "calzado-tacones-dolce-and-gabbana",
+    "name": "Tacones Dolce & Gabbana",
+    "category": "Calzado",
+    "price": 5900,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Calzado/Tacones Dolce & Gabbana L5,900.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "calzado-tacones-saint-laurent",
+    "name": "Tacones Saint Laurent",
+    "category": "Calzado",
+    "price": 5500,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Calzado/Tacones Saint Laurent L5,500.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "calzado-tennis-dior",
+    "name": "Tennis Dior",
+    "category": "Calzado",
+    "price": 4900,
+    "salePrice": null,
+    "description": "",
+    "bestseller": true,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Calzado/Tennis Dior L4,900.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "lentes-lentes-celine",
+    "name": "Lentes Celine",
+    "category": "Lentes",
+    "price": 1650,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Lentes/Lentes Celine L1,650.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "lentes-lentes-chanel",
+    "name": "Lentes Chanel",
+    "category": "Lentes",
+    "price": 1650,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Lentes/Lentes Chanel L1,650.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "lentes-lentes-hermes",
+    "name": "Lentes Hermes",
+    "category": "Lentes",
+    "price": 1650,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Lentes/Lentes Hermes L1,650.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "lentes-lentes-off-white",
+    "name": "Lentes Off White",
+    "category": "Lentes",
+    "price": 1700,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Lentes/Lentes Off White L1,700.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "lentes-lentes-saint-laurent",
+    "name": "Lentes Saint Laurent",
+    "category": "Lentes",
+    "price": 1650,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Lentes/Lentes Saint Laurent L1,650.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "lentes-lentes-tom-ford",
+    "name": "Lentes Tom Ford",
+    "category": "Lentes",
+    "price": 1650,
+    "salePrice": null,
+    "description": "",
+    "bestseller": true,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Lentes/Lentes Tom Ford L1,650.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "makeup-blush-ysl",
+    "name": "Blush YSL",
+    "category": "Makeup",
+    "price": 990,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Makeup/Blush YSL L990.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "makeup-charlotte-s-beauty-soulmates-face-palette",
+    "name": "Charlotte's Beauty Soulmates Face Palette",
+    "category": "Makeup",
+    "price": 1190,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Makeup/Charlotte's Beauty Soulmates Face Palette L1,190.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "makeup-dior-palette",
+    "name": "Dior Palette",
+    "category": "Makeup",
+    "price": 1190,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Makeup/Dior Palette L1,190.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "makeup-set-dior-addict",
+    "name": "Set Dior Addict",
+    "category": "Makeup",
+    "price": 1890,
+    "salePrice": null,
+    "description": "",
+    "bestseller": true,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Makeup/Set Dior Addict L1,890.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-carolina-herrera-set-good-girl-4x30ml",
+    "name": "Carolina Herrera set Good Girl 4x30ml",
+    "category": "Sets de Perfumes",
+    "price": 1990,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Carolina Herrera set Good Girl 4x30ml L1,990.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-discovery-set",
+    "name": "Discovery Set",
+    "category": "Sets de Perfumes",
+    "price": 2800,
+    "salePrice": null,
+    "description": "",
+    "bestseller": true,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Discovery Set L2,800.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-mini-coffret-dior",
+    "name": "Mini Coffret Dior",
+    "category": "Sets de Perfumes",
+    "price": 2700,
+    "salePrice": null,
+    "description": "",
+    "bestseller": true,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Mini Coffret Dior L2,700.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-set-chanel-mini",
+    "name": "Set Chanel Mini",
+    "category": "Sets de Perfumes",
+    "price": 2700,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Set Chanel Mini L2,700.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-set-chanel-minis",
+    "name": "Set Chanel Minis",
+    "category": "Sets de Perfumes",
+    "price": 2700,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Set Chanel Minis L2700.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-set-dior-mini",
+    "name": "Set Dior Mini",
+    "category": "Sets de Perfumes",
+    "price": 2800,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Set Dior Mini L2,800.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-set-gucci-mini",
+    "name": "Set Gucci Mini",
+    "category": "Sets de Perfumes",
+    "price": 2700,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Set Gucci Mini L2,700.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-set-tiffany-and-co-3x30ml",
+    "name": "Set TIFFANY& CO. 3x30ml",
+    "category": "Sets de Perfumes",
+    "price": 1990,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Set TIFFANY& CO. 3x30ml L1,990.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "sets-de-perfumes-set-ysl",
+    "name": "Set YSL",
+    "category": "Sets de Perfumes",
+    "price": 3250,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Sets de Perfumes/Set YSL L3,250.jpeg",
+    "createdAt": "2026-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "accesorios-vicera-alo",
+    "name": "Vicera alo",
+    "category": "Accesorios",
+    "price": 890,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Accesorios/Vicera alo (Blanco) L890.jpeg",
+    "createdAt": "2026-10-10T16:50:38.354Z",
+    "colors": [
+      {
+        "name": "Blanco",
+        "hex": "#ffffff",
+        "image": "img/Accesorios/Vicera alo (Blanco) L890.jpeg"
+      },
+      {
+        "name": "Negro",
+        "hex": "#1c1c1c",
+        "image": "img/Accesorios/Vicera alo (Negro) L890.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bolsos-bolso-chanel",
+    "name": "Bolso Chanel",
+    "category": "Bolsos",
+    "price": 2350,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Bolsos/Bolso Chanel (Negro) L2,350.jpeg",
+    "createdAt": "2026-10-10T16:50:38.358Z",
+    "colors": [
+      {
+        "name": "Negro",
+        "hex": "#1c1c1c",
+        "image": "img/Bolsos/Bolso Chanel (Negro) L2,350.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bolsos-bolso-christian-louboutin",
+    "name": "Bolso Christian Louboutin",
+    "category": "Bolsos",
+    "price": 2450,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Bolsos/Bolso Christian Louboutin (Negro) L2,450.jpeg",
+    "createdAt": "2026-10-10T16:50:38.358Z",
+    "colors": [
+      {
+        "name": "Negro",
+        "hex": "#1c1c1c",
+        "image": "img/Bolsos/Bolso Christian Louboutin (Negro) L2,450.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bolsos-bolso-givenchy",
+    "name": "Bolso Givenchy",
+    "category": "Bolsos",
+    "price": 2150,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Bolsos/Bolso Givenchy  (Cafe) L2,150.jpeg",
+    "createdAt": "2026-10-10T16:50:38.359Z",
+    "colors": [
+      {
+        "name": "Cafe",
+        "hex": "#6f4e37",
+        "image": "img/Bolsos/Bolso Givenchy  (Cafe) L2,150.jpeg"
+      },
+      {
+        "name": "Negro",
+        "hex": "#1c1c1c",
+        "image": "img/Bolsos/Bolso Givenchy  (Negro) L2,150.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bolsos-bolso-long-champ-tamano-m",
+    "name": "Bolso Long Champ (Tamaño M)",
+    "category": "Bolsos",
+    "price": 1700,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Bolsos/Bolso Long Champ (Tamaño M) L1,700.jpeg",
+    "createdAt": "2026-10-10T16:50:38.359Z"
+  },
+  {
+    "id": "bolsos-bucket-ysl",
+    "name": "Bucket YSL",
+    "category": "Bolsos",
+    "price": 2450,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Bolsos/Bucket YSL (Cafe) L2,450.jpeg",
+    "createdAt": "2026-10-10T16:50:38.359Z",
+    "colors": [
+      {
+        "name": "Cafe",
+        "hex": "#6f4e37",
+        "image": "img/Bolsos/Bucket YSL (Cafe) L2,450.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bolsos-chanel-26",
+    "name": "Chanel 26",
+    "category": "Bolsos",
+    "price": 3500,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Bolsos/Chanel 26 (beige) L3,500.jpeg",
+    "createdAt": "2026-10-10T16:50:38.359Z",
+    "colors": [
+      {
+        "name": "Beige",
+        "hex": "#dcc7a6",
+        "image": "img/Bolsos/Chanel 26 (beige) L3,500.jpeg"
+      },
+      {
+        "name": "Rosada",
+        "hex": "#f2b8c6",
+        "image": "img/Bolsos/Chanel 26 (Rosada) L3,500.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bolsos-mini-coach",
+    "name": "Mini Coach",
+    "category": "Bolsos",
+    "price": 1290,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Bolsos/Mini Coach L1,290.jpeg",
+    "createdAt": "2026-10-10T16:50:38.359Z"
+  },
+  {
+    "id": "bolsos-tote-bag-christian-louboutin",
+    "name": "Tote Bag Christian Louboutin",
+    "category": "Bolsos",
+    "price": 2450,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Bolsos/Tote Bag Christian Louboutin (Negro) L2,450.jpeg",
+    "createdAt": "2026-10-10T16:50:38.359Z",
+    "colors": [
+      {
+        "name": "Negro",
+        "hex": "#1c1c1c",
+        "image": "img/Bolsos/Tote Bag Christian Louboutin (Negro) L2,450.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bolsos-ysl-bag",
+    "name": "YSL Bag",
+    "category": "Bolsos",
+    "price": 2250,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Bolsos/YSL Bag (Negro) L2,250.jpeg",
+    "createdAt": "2026-10-10T16:50:38.359Z",
+    "colors": [
+      {
+        "name": "Negro",
+        "hex": "#1c1c1c",
+        "image": "img/Bolsos/YSL Bag (Negro) L2,250.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "calzado-tacones-2-christian-louboutin",
+    "name": "Tacones 2 Christian Louboutin",
+    "category": "Calzado",
+    "price": 4900,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Calzado/Tacones 2 Christian Louboutin L4,900.jpeg",
+    "createdAt": "2026-10-10T16:50:38.360Z"
+  },
+  {
+    "id": "calzado-tacones-christian-louboutin",
+    "name": "Tacones Christian Louboutin",
+    "category": "Calzado",
+    "price": 5900,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "image": "img/Calzado/Tacones Christian Louboutin L5,900.jpeg",
+    "createdAt": "2026-10-10T16:50:38.360Z"
+  },
+  {
+    "id": "calzado-tacones-leopard-christian-louboutin",
+    "name": "Tacones Leopard Christian Louboutin",
+    "category": "Calzado",
+    "price": 5900,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "image": "img/Calzado/Tacones Leopard Christian Louboutin L5,900.jpeg",
+    "createdAt": "2026-10-10T16:50:38.360Z"
+  }
+]
