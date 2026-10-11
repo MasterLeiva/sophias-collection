@@ -193,7 +193,7 @@
     "image": "img/Accesorios/crossbody-para-caballero-122465.jpg",
     "id": "accesorios-crossbody-para-caballero",
     "createdAt": "2026-10-11T17:41:11.493Z",
-    "isCover": true
+    "isCover": false
   },
   {
     "salePrice": null,
@@ -206,7 +206,8 @@
     "price": 1850,
     "image": "img/Accesorios/set-para-caballero-dc5fd8.jpg",
     "id": "accesorios-set-para-caballero",
-    "createdAt": "2026-10-11T17:40:07.802Z"
+    "createdAt": "2026-10-11T17:40:07.802Z",
+    "isCover": true
   },
   {
     "salePrice": null,
