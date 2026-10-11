@@ -23,7 +23,8 @@
     "price": 1990,
     "image": "img/Sets de perfumes/calvin-klein-ad015b.jpg",
     "id": "sets-de-perfumes-calvin-klein",
-    "createdAt": "2026-10-11T17:47:42.120Z"
+    "createdAt": "2026-10-11T17:47:42.120Z",
+    "forHim": true
   },
   {
     "salePrice": null,
