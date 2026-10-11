@@ -10,7 +10,19 @@
     "price": 1790,
     "image": "img/Bolsos/shoulder-bag-314711.jpg",
     "id": "bolsos-shoulder-bag",
-    "createdAt": "2026-10-11T18:12:30.352Z"
+    "createdAt": "2026-10-11T18:12:30.352Z",
+    "colors": [
+      {
+        "name": "Rosado",
+        "hex": "#f2b8c6",
+        "image": "img/Bolsos/shoulder-bag-314711.jpg"
+      },
+      {
+        "name": "Camel",
+        "hex": "#c19a6b",
+        "image": "img/Bolsos/shoulder-bag-camel-f2feb4.jpg"
+      }
+    ]
   },
   {
     "salePrice": null,
