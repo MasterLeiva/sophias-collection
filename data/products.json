@@ -1,6 +1,19 @@
 [
   {
     "salePrice": null,
+    "description": "Talla 6 y 7",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Sandalias Miu Miu",
+    "category": "Calzado",
+    "price": 3950,
+    "image": "img/Calzado/sandalias-miu-miu-ac38e0.jpg",
+    "id": "calzado-sandalias-miu-miu",
+    "createdAt": "2026-10-11T17:50:56.293Z"
+  },
+  {
+    "salePrice": null,
     "description": "3x30 ml",
     "bestseller": false,
     "isNew": false,
