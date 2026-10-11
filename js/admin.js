@@ -98,7 +98,7 @@ function render() {
         <img src="${esc(img(p.image))}" alt="" loading="lazy">
         <span class="row__text">
           <span class="row__name">${esc(p.name)}</span>
-          <span class="row__cat">${esc(p.category)}${p.hidden ? " · Oculto" : ""}${p.colors?.length > 1 ? ` · ${p.colors.length} colores` : ""}</span>
+          <span class="row__cat">${esc(p.category)}${p.hidden ? " · Oculto" : ""}${p.isCover ? " · 🖼️ Portada" : ""}${p.colors?.length > 1 ? ` · ${p.colors.length} colores` : ""}</span>
           ${p.colors?.length ? `<span class="row__dots">${p.colors.map((c) => `<i style="background:${esc(c.hex)}" title="${esc(c.name)}"></i>`).join("")}</span>` : ""}
           <span class="row__price">${onSale(p) ? `<b class="price--sale">${money(p.salePrice)}</b> <s>${money(p.price)}</s>` : money(p.price)}</span>
         </span>
@@ -176,6 +176,7 @@ function openEditor(p = null) {
   form.description.value = p?.description ?? "";
   form.bestseller.checked = !!p?.bestseller;
   form.isNew.checked = p ? !!p.isNew : true;
+  form.isCover.checked = !!p?.isCover;
   form.hidden.checked = !!p?.hidden;
   $(".js-sale-toggle").checked = p ? onSale(p) : false;
   syncSale();
@@ -366,6 +367,7 @@ form.addEventListener("submit", async (e) => {
       description: form.description.value,
       bestseller: form.bestseller.checked,
       isNew: form.isNew.checked,
+      isCover: form.isCover.checked,
       hidden: form.hidden.checked,
     };
     const upload = (blob, label) => call(() => backend.upload(blob, category, label));
@@ -382,6 +384,7 @@ form.addEventListener("submit", async (e) => {
     } else {
       products.unshift(await call(() => backend.create(body)));
     }
+    if (body.isCover) products = await call(() => backend.list()); // the old cover was turned off
     closeEditor();
     render();
     toast((editing ? "Cambios guardados ✓" : "Producto agregado ✓") + backend.savedNote);

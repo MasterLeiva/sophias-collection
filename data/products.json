@@ -192,7 +192,8 @@
     "price": 1890,
     "image": "img/Accesorios/crossbody-para-caballero-122465.jpg",
     "id": "accesorios-crossbody-para-caballero",
-    "createdAt": "2026-10-11T17:41:11.493Z"
+    "createdAt": "2026-10-11T17:41:11.493Z",
+    "isCover": true
   },
   {
     "salePrice": null,
@@ -353,7 +354,8 @@
         "hex": "#1c1c1c",
         "image": "img/Bolsos/Tote Bag Gucci (Negro) L2,250.jpeg"
       }
-    ]
+    ],
+    "isCover": true
   },
   {
     "id": "calzado-christian-louboutin",
@@ -366,7 +368,8 @@
     "isNew": true,
     "hidden": false,
     "image": "img/Calzado/Christian Louboutin L5,900.jpeg",
-    "createdAt": "2026-10-10T00:00:00.000Z"
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "isCover": true
   },
   {
     "id": "calzado-tacones-dolce-and-gabbana",
@@ -457,7 +460,8 @@
     "isNew": true,
     "hidden": false,
     "image": "img/Lentes/Lentes Off White L1,700.jpeg",
-    "createdAt": "2026-10-10T00:00:00.000Z"
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "isCover": true
   },
   {
     "id": "lentes-lentes-saint-laurent",
@@ -535,7 +539,8 @@
     "isNew": false,
     "hidden": false,
     "image": "img/Makeup/Set Dior Addict L1,890.jpeg",
-    "createdAt": "2026-10-10T00:00:00.000Z"
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "isCover": true
   },
   {
     "id": "sets-de-perfumes-carolina-herrera-set-good-girl-4x30ml",
@@ -613,7 +618,8 @@
     "isNew": false,
     "hidden": false,
     "image": "img/Sets de Perfumes/Set Dior Mini L2,800.jpeg",
-    "createdAt": "2026-10-10T00:00:00.000Z"
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "isCover": true
   },
   {
     "id": "sets-de-perfumes-set-gucci-mini",

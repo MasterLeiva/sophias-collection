@@ -9,7 +9,7 @@ import { createReadStream, existsSync, mkdirSync, readFileSync, readdirSync, ren
 import { dirname, extname, join, normalize, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { randomBytes, createHash, timingSafeEqual } from "node:crypto";
-import { TRASH, cleanProduct, imagesOf, importImages, newProduct, slugify } from "./js/catalog.mjs";
+import { TRASH, cleanProduct, imagesOf, importImages, keepOneCover, newProduct, slugify } from "./js/catalog.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT) || 5173;
@@ -166,6 +166,7 @@ async function adminApi(req, res, path) {
     let p;
     try { p = newProduct(await readJsonBody(req), list, imageExists); } catch (err) { return send(res, 400, { error: err.message }); }
     list.unshift(p);
+    keepOneCover(list, p);
     saveProducts(list);
     return send(res, 201, p);
   }
@@ -180,6 +181,7 @@ async function adminApi(req, res, path) {
       if (!updated.name || !updated.category) return send(res, 400, { error: "Faltan nombre o categoría" });
       const oldImages = imagesOf(list[i]);
       list[i] = updated;
+      keepOneCover(list, updated);
       saveProducts(list);
       for (const img of oldImages) if (!imagesOf(updated).includes(img)) trashImage(img, list);
       return send(res, 200, updated);

@@ -126,10 +126,8 @@ function initProductTabs() {
 }
 
 // ---- Category covers ---------------------------------------------------------
-const coverFor = (cat) => {
-  const p = byId((CONFIG.categoryCovers || {})[cat]);
-  return p && p.category === cat ? p : PRODUCTS.find((x) => x.category === cat);
-};
+// Cover photo of a category: the product marked "Portada" in the admin, else its first product.
+const coverFor = (cat) => PRODUCTS.find((x) => x.category === cat && x.isCover) || PRODUCTS.find((x) => x.category === cat);
 
 function initCollections() {
   $(".js-collections").innerHTML = CATEGORIES.map((c) => `
