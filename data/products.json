@@ -1,6 +1,19 @@
 [
   {
     "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Shoulder bag",
+    "category": "Bolsos",
+    "price": 1790,
+    "image": "img/Bolsos/shoulder-bag-314711.jpg",
+    "id": "bolsos-shoulder-bag",
+    "createdAt": "2026-10-11T18:12:30.352Z"
+  },
+  {
+    "salePrice": null,
     "description": "4x30 ml",
     "bestseller": false,
     "isNew": false,
