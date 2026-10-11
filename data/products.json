@@ -293,7 +293,7 @@
     "salePrice": null,
     "description": "",
     "bestseller": false,
-    "isNew": true,
+    "isNew": false,
     "hidden": false,
     "image": "img/Bolsos/Bolso Coach (Cafe) L2,250.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
