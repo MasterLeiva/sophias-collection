@@ -32,11 +32,12 @@
     "isNew": false,
     "hidden": false,
     "name": "Valentino 4x30 ml",
-    "category": "Sets de perfumes",
+    "category": "Sets de Perfumes",
     "price": 1999,
     "image": "img/Sets de perfumes/valentino-4x30-ml-f2d9b1.jpg",
     "id": "sets-de-perfumes-valentino-4x30-ml",
-    "createdAt": "2026-10-11T17:44:51.323Z"
+    "createdAt": "2026-10-11T17:44:51.323Z",
+    "forHim": true
   },
   {
     "salePrice": null,
@@ -49,7 +50,8 @@
     "price": 1890,
     "image": "img/Accesorios/crossbody-para-caballero-0d0b6e.jpg",
     "id": "accesorios-crossbody-para-caballero-3",
-    "createdAt": "2026-10-11T17:43:49.157Z"
+    "createdAt": "2026-10-11T17:43:49.157Z",
+    "forHim": true
   },
   {
     "salePrice": null,
@@ -62,7 +64,8 @@
     "price": 1650,
     "image": "img/Accesorios/crossbody-para-caballero-c81614.jpg",
     "id": "accesorios-crossbody-para-caballero-2",
-    "createdAt": "2026-10-11T17:42:10.449Z"
+    "createdAt": "2026-10-11T17:42:10.449Z",
+    "forHim": true
   },
   {
     "salePrice": null,
@@ -75,7 +78,8 @@
     "price": 1890,
     "image": "img/Accesorios/crossbody-para-caballero-122465.jpg",
     "id": "accesorios-crossbody-para-caballero",
-    "createdAt": "2026-10-11T17:41:11.493Z"
+    "createdAt": "2026-10-11T17:41:11.493Z",
+    "forHim": true
   },
   {
     "salePrice": null,
@@ -88,7 +92,8 @@
     "price": 1850,
     "image": "img/Accesorios/set-para-caballero-dc5fd8.jpg",
     "id": "accesorios-set-para-caballero",
-    "createdAt": "2026-10-11T17:40:07.802Z"
+    "createdAt": "2026-10-11T17:40:07.802Z",
+    "forHim": true
   },
   {
     "salePrice": null,
@@ -776,5 +781,18 @@
     "hidden": false,
     "image": "img/Calzado/Tacones Leopard Christian Louboutin L5,900.jpeg",
     "createdAt": "2026-10-10T16:50:38.360Z"
+  },
+  {
+    "id": "sets-de-perfumes-valentino-4x30-ml-f2d9b1",
+    "name": "valentino-4x30-ml-f2d9b1",
+    "category": "Sets de Perfumes",
+    "price": 0,
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": true,
+    "image": "img/Sets de Perfumes/valentino-4x30-ml-f2d9b1.jpg",
+    "createdAt": "2026-10-11T17:48:15.533Z"
   }
 ]

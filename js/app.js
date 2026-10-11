@@ -22,6 +22,9 @@ const discount = (p) => Math.round((1 - p.salePrice / p.price) * 100);
 const colorsOf = (p) => p.colors || [];
 const findColor = (p, name) => colorsOf(p).find((c) => c.name === name) || colorsOf(p)[0] || null;
 const imageFor = (p, colorName) => findColor(p, colorName)?.image || p.image;
+// "Para Ellos" is a collection, not a folder: products marked forHim show there and in their own category.
+const forHimName = () => CONFIG.forHimCategory || "Para Ellos";
+const inCategory = (p, c) => p.category === c || (c === forHimName() && p.forHim);
 
 const storage = {
   get(key, fallback) { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } },
@@ -459,7 +462,8 @@ window.App = {
       // Categories listed in site.json "categoryOrder" go first, in that order; the rest alphabetically.
       const order = site.categoryOrder || [];
       const rank = (c) => (order.includes(c) ? order.indexOf(c) : order.length);
-      window.CATEGORIES = [...new Set(PRODUCTS.map((p) => p.category))]
+      const forHim = PRODUCTS.some((p) => p.forHim) ? [forHimName()] : [];
+      window.CATEGORIES = [...new Set([...PRODUCTS.map((p) => p.category), ...forHim])]
         .sort((a, b) => rank(a) - rank(b) || a.localeCompare(b, "es"));
       renderChrome();
       initAnnouncements();

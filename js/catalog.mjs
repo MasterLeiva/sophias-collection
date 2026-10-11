@@ -33,7 +33,7 @@ export function cleanProduct(input, existing, imageExists) {
     const s = input.salePrice === "" || input.salePrice === null ? null : num(input.salePrice);
     out.salePrice = s && s > 0 ? s : null;
   }
-  for (const k of ["bestseller", "isNew", "hidden"]) if (k in input) out[k] = Boolean(input[k]);
+  for (const k of ["bestseller", "isNew", "hidden", "forHim"]) if (k in input) out[k] = Boolean(input[k]);
   if ("image" in input) out.image = validImage(input.image) || out.image;
   if ("colors" in input) {
     out.colors = (Array.isArray(input.colors) ? input.colors : []).slice(0, 20).map((c) => ({
