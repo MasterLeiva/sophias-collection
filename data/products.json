@@ -333,7 +333,7 @@
         "image": "img/Bolsos/Bolso Coach (Cafe) L2,250.jpeg"
       }
     ],
-    "isBanner": true
+    "isBanner": false
   },
   {
     "id": "bolsos-tote-bag-gucci",
@@ -872,7 +872,8 @@
         "image": "img/Bolsos/YSL Bag (Negro) L2,250.jpeg"
       }
     ],
-    "isCover": false
+    "isCover": false,
+    "isBanner": true
   },
   {
     "id": "calzado-tacones-2-christian-louboutin",
