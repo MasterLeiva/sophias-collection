@@ -1,5 +1,18 @@
 [
   {
+    "salePrice": 990,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Mini wallet",
+    "category": "Bolsos",
+    "price": 1290,
+    "image": "img/Bolsos/mini-wallet-10cfa9.jpg",
+    "id": "bolsos-mini-wallet",
+    "createdAt": "2026-10-11T18:02:52.199Z"
+  },
+  {
     "salePrice": 790,
     "description": "",
     "bestseller": false,
