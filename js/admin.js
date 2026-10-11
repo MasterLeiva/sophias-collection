@@ -18,6 +18,7 @@ let mainImage = null;   // current main photo path (products without colors)
 let colorRows = [];
 const filters = { q: "", cat: "", chip: "all" };
 let backend;
+let site = {};
 const img = (path) => backend.imageUrl(path);
 
 // Runs a backend call; an expired login sends you back to the login screen.
@@ -98,7 +99,7 @@ function render() {
         <img src="${esc(img(p.image))}" alt="" loading="lazy">
         <span class="row__text">
           <span class="row__name">${esc(p.name)}</span>
-          <span class="row__cat">${esc(p.category)}${p.hidden ? " · Oculto" : ""}${p.isCover ? " · 🖼️ Portada" : ""}${p.colors?.length > 1 ? ` · ${p.colors.length} colores` : ""}</span>
+          <span class="row__cat">${esc(p.category)}${p.hidden ? " · Oculto" : ""}${p.isCover ? " · 🖼️ Portada" : ""}${p.isBanner ? " · 🌄 Foto grande" : ""}${p.colors?.length > 1 ? ` · ${p.colors.length} colores` : ""}</span>
           ${p.colors?.length ? `<span class="row__dots">${p.colors.map((c) => `<i style="background:${esc(c.hex)}" title="${esc(c.name)}"></i>`).join("")}</span>` : ""}
           <span class="row__price">${onSale(p) ? `<b class="price--sale">${money(p.salePrice)}</b> <s>${money(p.price)}</s>` : money(p.price)}</span>
         </span>
@@ -177,6 +178,8 @@ function openEditor(p = null) {
   form.bestseller.checked = !!p?.bestseller;
   form.isNew.checked = p ? !!p.isNew : true;
   form.isCover.checked = !!p?.isCover;
+  form.isBanner.checked = !!p?.isBanner;
+  syncBannerHint();
   form.hidden.checked = !!p?.hidden;
   $(".js-sale-toggle").checked = p ? onSale(p) : false;
   syncSale();
@@ -197,6 +200,17 @@ $(".js-new").onclick = () => openEditor(null);
 $$(".js-close").forEach((b) => (b.onclick = closeEditor));
 $(".js-overlay").onclick = closeEditor;
 document.addEventListener("keydown", (e) => e.key === "Escape" && closeEditor());
+
+// Only some categories have a big photo on the home page (data/site.json → homeBanners).
+function syncBannerHint() {
+  const slots = site.homeBanners || {};
+  const withBanner = [...(slots.split || []), slots.feature, ...(slots.grid || [])].filter(Boolean);
+  const has = withBanner.some((c) => c.toLowerCase() === form.category.value.trim().toLowerCase());
+  $(".js-banner-hint").textContent = has
+    ? "Su foto se usa en la imagen grande de su categoría en el inicio (reemplaza la actual)"
+    : `Solo aplica a: ${withBanner.join(", ")}`;
+}
+form.category.addEventListener("input", syncBannerHint);
 
 // Offer controls
 function syncSale() {
@@ -368,6 +382,7 @@ form.addEventListener("submit", async (e) => {
       bestseller: form.bestseller.checked,
       isNew: form.isNew.checked,
       isCover: form.isCover.checked,
+      isBanner: form.isBanner.checked,
       hidden: form.hidden.checked,
     };
     const upload = (blob, label) => call(() => backend.upload(blob, category, label));
@@ -384,7 +399,7 @@ form.addEventListener("submit", async (e) => {
     } else {
       products.unshift(await call(() => backend.create(body)));
     }
-    if (body.isCover) products = await call(() => backend.list()); // the old cover was turned off
+    if (body.isCover || body.isBanner) products = await call(() => backend.list()); // the old one was turned off
     closeEditor();
     render();
     toast((editing ? "Cambios guardados ✓" : "Producto agregado ✓") + backend.savedNote);
@@ -418,6 +433,6 @@ function toast(text) {
 }
 
 // ---- Boot -------------------------------------------------------------------------
-const site = await fetch("data/site.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => ({}));
+site = await fetch("data/site.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => ({}));
 backend = await detectBackend(site);
 (await backend.check()) ? showApp().catch((err) => toast(err.message)) : showLogin();

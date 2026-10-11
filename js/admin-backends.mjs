@@ -2,7 +2,7 @@
 //   LocalBackend  → the local server (node server.mjs), password login.
 //   GitHubBackend → the GitHub repository behind GitHub Pages, using a GitHub access token.
 //                   Each save is a commit; GitHub Pages republishes the store in 1–2 minutes.
-import { cleanProduct, imagesOf, importImages, keepOneCover, newProduct, slugify } from "./catalog.mjs";
+import { cleanProduct, imagesOf, importImages, keepOnePerCategory, newProduct, slugify } from "./catalog.mjs";
 
 const encodePath = (p) => p.normalize("NFC").split("/").map(encodeURIComponent).join("/");
 const storage = {
@@ -153,7 +153,7 @@ export class GitHubBackend {
     const { result } = await this.mutate((list) => {
       const p = newProduct(body, list, this.exists);
       list.unshift(p);
-      keepOneCover(list, p);
+      keepOnePerCategory(list, p);
       return p;
     }, `Admin: agregar ${body.name}`);
     return result;
@@ -168,7 +168,7 @@ export class GitHubBackend {
       if (!updated.name || !updated.category) throw new Error("Faltan nombre o categoría");
       oldImages = imagesOf(list[i]);
       list[i] = updated;
-      keepOneCover(list, updated);
+      keepOnePerCategory(list, updated);
       return updated;
     }, `Admin: actualizar ${body.name || id}`);
     await this.deleteUnused(oldImages, list);

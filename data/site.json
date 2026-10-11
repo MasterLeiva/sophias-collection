@@ -48,5 +48,16 @@
     "owner": "",
     "repo": "",
     "branch": ""
+  },
+  "homeBanners": {
+    "split": [
+      "Calzado",
+      "Bolsos"
+    ],
+    "feature": "Sets de Perfumes",
+    "grid": [
+      "Lentes",
+      "Makeup"
+    ]
   }
 }

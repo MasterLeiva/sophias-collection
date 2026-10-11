@@ -138,37 +138,44 @@ function initCollections() {
 }
 
 // Banners skip themselves if their product or category no longer exists.
-function banner({ product, title, text, href, cta = "Comprar ahora" }) {
-  const p = byId(product);
+// Big home photo of a category: the product marked "Foto grande del inicio" in the admin,
+// else its cover, else its first product.
+const bannerFor = (cat) =>
+  PRODUCTS.find((x) => x.category === cat && x.isBanner) || PRODUCTS.find((x) => x.category === cat && x.isCover) || PRODUCTS.find((x) => x.category === cat);
+
+const BANNER_TEXT = {
+  "Lentes": "El accesorio perfecto para cada look.",
+  "Makeup": "Paletas, blush y sets para brillar.",
+};
+
+function banner(cat) {
+  const p = bannerFor(cat);
   if (!p) return "";
+  const text = BANNER_TEXT[cat];
   return `
-    <a class="banner" href="${href}">
+    <a class="banner" href="${categoryUrl(cat)}">
       <img src="${src(p.image)}" alt="" loading="lazy">
       <div class="banner__content reveal">
-        <h2 class="banner__title">${esc(title)}</h2>
+        <h2 class="banner__title">${esc(cat)}</h2>
         ${text ? `<p class="banner__text">${esc(text)}</p>` : ""}
-        <span class="btn">${esc(cta)}</span>
+        <span class="btn">Comprar ahora</span>
       </div>
     </a>`;
 }
 
 function initBanners() {
-  $(".js-split").innerHTML =
-    banner({ product: "calzado-tacones-dolce-and-gabbana", title: "Calzado", href: categoryUrl("Calzado") }) +
-    banner({ product: "bolsos-bolso-coach", title: "Bolsos", href: categoryUrl("Bolsos") });
+  const slots = CONFIG.homeBanners || {};
+  $(".js-split").innerHTML = (slots.split || []).map(banner).join("");
+  $(".js-grid").innerHTML = (slots.grid || []).map(banner).join("");
 
-  $(".js-grid").innerHTML =
-    banner({ product: "lentes-lentes-tom-ford", title: "Lentes", text: "El accesorio perfecto para cada look.", href: categoryUrl("Lentes") }) +
-    banner({ product: "makeup-blush-ysl", title: "Makeup", text: "Paletas, blush y sets para brillar.", href: categoryUrl("Makeup") });
-
-  const f = byId("sets-de-perfumes-set-chanel-minis");
+  const f = slots.feature && bannerFor(slots.feature);
   $(".js-feature").innerHTML = f ? `
     <div class="feature__media"><img src="${src(f.image)}" alt="${esc(f.name)}" loading="lazy"></div>
     <div class="feature__text reveal">
       <span class="eyebrow">Sets de perfumes</span>
       <h2>Regalos que enamoran</h2>
       <p>Minis y sets de tus fragancias favoritas — ideales para regalar o para llevar contigo a todas partes.</p>
-      <a class="btn btn--dark" href="${categoryUrl("Sets de Perfumes")}">Ver sets de perfumes</a>
+      <a class="btn btn--dark" href="${categoryUrl(slots.feature)}">Ver sets de perfumes</a>
     </div>` : "";
 }
 

@@ -33,7 +33,7 @@ export function cleanProduct(input, existing, imageExists) {
     const s = input.salePrice === "" || input.salePrice === null ? null : num(input.salePrice);
     out.salePrice = s && s > 0 ? s : null;
   }
-  for (const k of ["bestseller", "isNew", "hidden", "isCover"]) if (k in input) out[k] = Boolean(input[k]);
+  for (const k of ["bestseller", "isNew", "hidden", "isCover", "isBanner"]) if (k in input) out[k] = Boolean(input[k]);
   if ("image" in input) out.image = validImage(input.image) || out.image;
   if ("colors" in input) {
     out.colors = (Array.isArray(input.colors) ? input.colors : []).slice(0, 20).map((c) => ({
@@ -48,10 +48,13 @@ export function cleanProduct(input, existing, imageExists) {
   return out;
 }
 
-// Only one cover photo per category: turning it on for `p` turns it off for the rest.
-export function keepOneCover(list, p) {
-  if (!p.isCover) return;
-  for (const other of list) if (other !== p && other.category === p.category && other.isCover) other.isCover = false;
+// One cover photo and one big home photo per category: turning either on for `p`
+// turns it off for the other products of that category.
+export function keepOnePerCategory(list, p) {
+  for (const flag of ["isCover", "isBanner"]) {
+    if (!p[flag]) continue;
+    for (const other of list) if (other !== p && other.category === p.category && other[flag]) other[flag] = false;
+  }
 }
 
 export function newProduct(input, list, imageExists) {
