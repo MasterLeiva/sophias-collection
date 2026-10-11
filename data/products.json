@@ -355,7 +355,7 @@
         "image": "img/Bolsos/Tote Bag Gucci (Negro) L2,250.jpeg"
       }
     ],
-    "isCover": true
+    "isCover": false
   },
   {
     "id": "calzado-christian-louboutin",
@@ -860,7 +860,8 @@
         "hex": "#1c1c1c",
         "image": "img/Bolsos/YSL Bag (Negro) L2,250.jpeg"
       }
-    ]
+    ],
+    "isCover": true
   },
   {
     "id": "calzado-tacones-2-christian-louboutin",
