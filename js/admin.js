@@ -344,7 +344,10 @@ form.addEventListener("submit", async (e) => {
   const err = $(".js-form-error");
   err.textContent = "";
   const name = form.name.value.trim();
-  const category = form.category.value.trim();
+  // Reuse an existing category when it only differs in capitals/accents ("Sets de perfumes" → "Sets de Perfumes").
+  const fold = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
+  const typed = form.category.value.trim();
+  const category = categories().find((c) => fold(c) === fold(typed)) || typed;
   const price = parseNum(form.price.value);
   const saleOn = $(".js-sale-toggle").checked;
   const salePrice = saleOn ? parseNum(form.salePrice.value) : null;
