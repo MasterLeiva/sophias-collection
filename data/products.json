@@ -535,7 +535,9 @@
     "isNew": false,
     "hidden": false,
     "image": "img/Makeup/dior-palette-dc75d5.jpg",
-    "createdAt": "2026-10-10T00:00:00.000Z"
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "isCover": true,
+    "isBanner": false
   },
   {
     "id": "makeup-set-dior-addict",
@@ -549,7 +551,7 @@
     "hidden": false,
     "image": "img/Makeup/Set Dior Addict L1,890.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
-    "isCover": true
+    "isCover": false
   },
   {
     "id": "sets-de-perfumes-carolina-herrera-set-good-girl-4x30ml",
