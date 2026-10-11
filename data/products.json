@@ -1,6 +1,19 @@
 [
   {
     "salePrice": null,
+    "description": "Para caballero",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Valentino 4x30 ml",
+    "category": "Sets de perfumes",
+    "price": 1999,
+    "image": "img/Sets de perfumes/valentino-4x30-ml-f2d9b1.jpg",
+    "id": "sets-de-perfumes-valentino-4x30-ml",
+    "createdAt": "2026-10-11T17:44:51.323Z"
+  },
+  {
+    "salePrice": null,
     "description": "Incluye strap largo",
     "bestseller": false,
     "isNew": false,
