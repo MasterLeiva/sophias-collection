@@ -574,7 +574,8 @@
     "hidden": false,
     "image": "img/Sets de Perfumes/Discovery Set L2,800.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
-    "isCover": false
+    "isCover": false,
+    "isBanner": true
   },
   {
     "id": "sets-de-perfumes-mini-coffret-dior",
@@ -615,7 +616,7 @@
     "hidden": false,
     "image": "img/Sets de Perfumes/Set Chanel Minis L2700.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
-    "isBanner": true
+    "isBanner": false
   },
   {
     "id": "sets-de-perfumes-set-dior-mini",
