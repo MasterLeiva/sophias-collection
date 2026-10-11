@@ -1,5 +1,19 @@
 [
   {
+    "salePrice": 790,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Set de 3 piezas",
+    "category": "Bolsos",
+    "price": 1590,
+    "forHim": false,
+    "image": "img/Bolsos/set-de-3-piezas-99d30d.jpg",
+    "id": "bolsos-set-de-3-piezas",
+    "createdAt": "2026-10-11T18:00:15.941Z"
+  },
+  {
     "salePrice": null,
     "description": "Talla 6 y 7",
     "bestseller": true,
