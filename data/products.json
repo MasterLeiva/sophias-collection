@@ -589,7 +589,7 @@
     "hidden": false,
     "image": "img/Sets de Perfumes/Mini Coffret Dior L2,700.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
-    "isCover": true
+    "isCover": false
   },
   {
     "id": "sets-de-perfumes-set-chanel-mini",
@@ -602,7 +602,9 @@
     "isNew": false,
     "hidden": false,
     "image": "img/Sets de Perfumes/Set Chanel Mini L2,700.jpeg",
-    "createdAt": "2026-10-10T00:00:00.000Z"
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "isCover": true,
+    "isBanner": false
   },
   {
     "id": "sets-de-perfumes-set-chanel-minis",
