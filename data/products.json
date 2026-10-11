@@ -370,7 +370,7 @@
     "hidden": false,
     "image": "img/Calzado/Christian Louboutin L5,900.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
-    "isCover": true
+    "isCover": false
   },
   {
     "id": "calzado-tacones-dolce-and-gabbana",
@@ -889,7 +889,8 @@
     "isNew": true,
     "hidden": false,
     "image": "img/Calzado/Tacones Christian Louboutin L5,900.jpeg",
-    "createdAt": "2026-10-10T16:50:38.360Z"
+    "createdAt": "2026-10-10T16:50:38.360Z",
+    "isCover": true
   },
   {
     "id": "calzado-tacones-leopard-christian-louboutin",
