@@ -33,7 +33,7 @@ export function cleanProduct(input, existing, imageExists) {
     const s = input.salePrice === "" || input.salePrice === null ? null : num(input.salePrice);
     out.salePrice = s && s > 0 ? s : null;
   }
-  for (const k of ["bestseller", "isNew", "hidden", "forHim"]) if (k in input) out[k] = Boolean(input[k]);
+  for (const k of ["bestseller", "isNew", "hidden"]) if (k in input) out[k] = Boolean(input[k]);
   if ("image" in input) out.image = validImage(input.image) || out.image;
   if ("colors" in input) {
     out.colors = (Array.isArray(input.colors) ? input.colors : []).slice(0, 20).map((c) => ({
@@ -60,7 +60,9 @@ export function newProduct(input, list, imageExists) {
 // "Nombre L1,234.jpeg" → new product. "Nombre (Color) L1,234.jpeg" → a color of the product
 // "Nombre" when it already exists in that category. Mutates `list`; returns the touched products.
 export function importImages(list, paths) {
-  const known = new Set(list.flatMap(imagesOf).map((i) => i.normalize("NFC")));
+  // Lowercase too: a Mac treats "Sets de perfumes" and "Sets de Perfumes" as the same folder.
+  const key = (path) => path.normalize("NFC").toLowerCase();
+  const known = new Set(list.flatMap(imagesOf).map(key));
   const added = [];
   // NFC so "ñ"/accents match how GitHub stores file names (a Mac lists them decomposed).
   const files = paths
@@ -70,7 +72,7 @@ export function importImages(list, paths) {
   for (const [, category, file] of files) {
     const dot = file.lastIndexOf(".");
     const image = `img/${category}/${file}`;
-    if (dot < 0 || !IMAGE_EXT.has(file.slice(dot).toLowerCase()) || known.has(image)) continue;
+    if (dot < 0 || !IMAGE_EXT.has(file.slice(dot).toLowerCase()) || known.has(key(image))) continue;
     const m = file.slice(0, dot).match(/^(.*?)\s+L\s?([\d,.]+)$/);
     const name = (m ? m[1] : file.slice(0, dot)).replace(/\s+/g, " ").trim();
     const split = splitColor(name);
@@ -80,7 +82,7 @@ export function importImages(list, paths) {
       if (existing) {
         existing.colors = existing.colors?.length ? existing.colors : [{ name: "Color 1", hex: "#cccccc", image: existing.image }];
         existing.colors.push(color);
-        known.add(image);
+        known.add(key(image));
         added.push(existing);
         continue;
       }
@@ -100,7 +102,7 @@ export function importImages(list, paths) {
       createdAt: new Date().toISOString(),
     };
     list.push(product);
-    known.add(image);
+    known.add(key(image));
     added.push(product);
   }
   return added;

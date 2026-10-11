@@ -65,7 +65,6 @@ const CHIPS = {
   all: { label: "Todos", test: () => true },
   bestseller: { label: "⭐ Más vendidos", test: (p) => p.bestseller },
   isNew: { label: "✨ Nuevos", test: (p) => p.isNew },
-  forHim: { label: "👔 Para ellos", test: (p) => p.forHim },
   sale: { label: "🏷️ En oferta", test: onSale },
   hidden: { label: "🙈 Ocultos", test: (p) => p.hidden },
 };
@@ -107,7 +106,6 @@ function render() {
       <div class="row__toggles">
         <button class="pill ${p.bestseller ? "is-on" : ""}" data-toggle="bestseller" data-id="${esc(p.id)}" aria-pressed="${p.bestseller}">⭐ Más vendido</button>
         <button class="pill ${p.isNew ? "is-on" : ""}" data-toggle="isNew" data-id="${esc(p.id)}" aria-pressed="${p.isNew}">✨ Nuevo</button>
-        <button class="pill ${p.forHim ? "is-on" : ""}" data-toggle="forHim" data-id="${esc(p.id)}" aria-pressed="${!!p.forHim}">👔 Para ellos</button>
         ${onSale(p) ? `<span class="pill is-on pill--sale">-${Math.round((1 - p.salePrice / p.price) * 100)}%</span>` : ""}
       </div>
     </li>`).join("") : `<li class="a-empty">No hay productos con estos filtros.</li>`;
@@ -135,7 +133,6 @@ $(".js-list").addEventListener("click", async (e) => {
     const msgs = {
       bestseller: p.bestseller ? "Agregado a Más vendidos" : "Quitado de Más vendidos",
       isNew: p.isNew ? "Marcado como Nuevo" : "Ya no aparece como Nuevo",
-      forHim: p.forHim ? "Agregado a Para Ellos" : "Quitado de Para Ellos",
     };
     toast(msgs[field] + backend.savedNote);
   } catch (ex) { toast(ex.message); t.disabled = false; }
@@ -179,7 +176,6 @@ function openEditor(p = null) {
   form.description.value = p?.description ?? "";
   form.bestseller.checked = !!p?.bestseller;
   form.isNew.checked = p ? !!p.isNew : true;
-  form.forHim.checked = !!p?.forHim;
   form.hidden.checked = !!p?.hidden;
   $(".js-sale-toggle").checked = p ? onSale(p) : false;
   syncSale();
@@ -370,7 +366,6 @@ form.addEventListener("submit", async (e) => {
       description: form.description.value,
       bestseller: form.bestseller.checked,
       isNew: form.isNew.checked,
-      forHim: form.forHim.checked,
       hidden: form.hidden.checked,
     };
     const upload = (blob, label) => call(() => backend.upload(blob, category, label));

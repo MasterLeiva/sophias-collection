@@ -128,7 +128,7 @@ function initProductTabs() {
 // ---- Category covers ---------------------------------------------------------
 const coverFor = (cat) => {
   const p = byId((CONFIG.categoryCovers || {})[cat]);
-  return p && inCategory(p, cat) ? p : PRODUCTS.find((x) => inCategory(x, cat));
+  return p && p.category === cat ? p : PRODUCTS.find((x) => x.category === cat);
 };
 
 function initCollections() {

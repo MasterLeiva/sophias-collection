@@ -24,7 +24,7 @@ App.ready.then(() => {
 
   function renderShop() {
     const view = VIEWS[state.view];
-    let items = view ? PRODUCTS.filter(view.filter) : PRODUCTS.filter((p) => !state.cat || inCategory(p, state.cat));
+    let items = view ? PRODUCTS.filter(view.filter) : PRODUCTS.filter((p) => !state.cat || p.category === state.cat);
 
     const sorters = {
       featured: (a, b) => (b.bestseller - a.bestseller) || (onSale(b) - onSale(a)) || (b.isNew - a.isNew),
