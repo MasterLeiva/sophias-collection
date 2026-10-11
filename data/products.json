@@ -757,7 +757,8 @@
         "hex": "#1c1c1c",
         "image": "img/Bolsos/Bolso Givenchy  (Negro) L2,150.jpeg"
       }
-    ]
+    ],
+    "isCover": true
   },
   {
     "id": "bolsos-bolso-long-champ-tamano-m",
@@ -869,7 +870,7 @@
         "image": "img/Bolsos/YSL Bag (Negro) L2,250.jpeg"
       }
     ],
-    "isCover": true
+    "isCover": false
   },
   {
     "id": "calzado-tacones-2-christian-louboutin",
