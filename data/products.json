@@ -507,7 +507,7 @@
     "hidden": false,
     "image": "img/Makeup/Blush YSL L990.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
-    "isBanner": true
+    "isBanner": false
   },
   {
     "id": "makeup-charlotte-s-beauty-soulmates-face-palette",
@@ -520,7 +520,9 @@
     "isNew": true,
     "hidden": false,
     "image": "img/Makeup/Charlotte's Beauty Soulmates Face Palette L1,190.jpeg",
-    "createdAt": "2026-10-10T00:00:00.000Z"
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "isCover": false,
+    "isBanner": true
   },
   {
     "id": "makeup-dior-palette",
