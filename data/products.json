@@ -1,6 +1,19 @@
 [
   {
     "salePrice": null,
+    "description": "Incluye strap largo",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Crossbody para caballero",
+    "category": "Accesorios",
+    "price": 1890,
+    "image": "img/Accesorios/crossbody-para-caballero-0d0b6e.jpg",
+    "id": "accesorios-crossbody-para-caballero-3",
+    "createdAt": "2026-10-11T17:43:49.157Z"
+  },
+  {
+    "salePrice": null,
     "description": "",
     "bestseller": false,
     "isNew": false,
