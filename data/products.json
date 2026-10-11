@@ -1,6 +1,19 @@
 [
   {
     "salePrice": null,
+    "description": "3x30 ml",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Calvin Klein",
+    "category": "Sets de perfumes",
+    "price": 1990,
+    "image": "img/Sets de perfumes/calvin-klein-ad015b.jpg",
+    "id": "sets-de-perfumes-calvin-klein",
+    "createdAt": "2026-10-11T17:47:42.120Z"
+  },
+  {
+    "salePrice": null,
     "description": "Para caballero",
     "bestseller": false,
     "isNew": false,
