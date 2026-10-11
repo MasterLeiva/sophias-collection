@@ -1,6 +1,19 @@
 [
   {
     "salePrice": null,
+    "description": "4x30 ml",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "name": "Set Dior",
+    "category": "Sets de Perfumes",
+    "price": 1999,
+    "image": "img/Sets de Perfumes/set-dior-ed5aa7.jpg",
+    "id": "sets-de-perfumes-set-dior",
+    "createdAt": "2026-10-11T18:11:09.458Z"
+  },
+  {
+    "salePrice": null,
     "description": "Talla 8",
     "bestseller": false,
     "isNew": false,
