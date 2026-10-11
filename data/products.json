@@ -619,7 +619,7 @@
     "hidden": false,
     "image": "img/Sets de Perfumes/Set Dior Mini L2,800.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
-    "isCover": true
+    "isCover": false
   },
   {
     "id": "sets-de-perfumes-set-gucci-mini",
@@ -655,10 +655,11 @@
     "salePrice": null,
     "description": "",
     "bestseller": false,
-    "isNew": true,
+    "isNew": false,
     "hidden": false,
     "image": "img/Sets de Perfumes/Set YSL L3,250.jpeg",
-    "createdAt": "2026-10-10T00:00:00.000Z"
+    "createdAt": "2026-10-10T00:00:00.000Z",
+    "isCover": true
   },
   {
     "id": "accesorios-vicera-alo",
