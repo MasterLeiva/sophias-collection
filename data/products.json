@@ -1,5 +1,18 @@
 [
   {
+    "salePrice": null,
+    "description": "Talla 8",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
+    "name": "Sandalias Tory B.",
+    "category": "Calzado",
+    "price": 2900,
+    "image": "img/Calzado/sandalias-tory-b-5aadc4.jpg",
+    "id": "calzado-sandalias-tory-b",
+    "createdAt": "2026-10-11T18:07:52.134Z"
+  },
+  {
     "salePrice": 990,
     "description": "",
     "bestseller": false,
