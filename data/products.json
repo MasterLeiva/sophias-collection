@@ -5,6 +5,31 @@
     "bestseller": false,
     "isNew": false,
     "hidden": false,
+    "name": "Vincha alo",
+    "category": "Accesorios",
+    "price": 590,
+    "colors": [
+      {
+        "name": "Rosado",
+        "hex": "#f2b8c6",
+        "image": "img/Accesorios/vincha-alo-rosado-4284f6.jpg"
+      },
+      {
+        "name": "Blanco hueso",
+        "hex": "#ffffff",
+        "image": "img/Accesorios/vincha-alo-blanco-hueso-32ccaa.jpg"
+      }
+    ],
+    "image": "img/Accesorios/vincha-alo-rosado-4284f6.jpg",
+    "id": "accesorios-vincha-alo",
+    "createdAt": "2026-10-11T18:17:06.848Z"
+  },
+  {
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": false,
+    "hidden": false,
     "name": "Shoulder bag",
     "category": "Bolsos",
     "price": 1790,
