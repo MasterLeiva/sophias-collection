@@ -628,7 +628,7 @@
     "id": "sets-de-perfumes-set-dior-mini",
     "name": "Set Dior Mini",
     "category": "Sets de Perfumes",
-    "price": 2800,
+    "price": 2890,
     "salePrice": null,
     "description": "",
     "bestseller": false,
@@ -636,7 +636,8 @@
     "hidden": false,
     "image": "img/Sets de Perfumes/Set Dior Mini L2,800.jpeg",
     "createdAt": "2026-10-10T00:00:00.000Z",
-    "isCover": false
+    "isCover": false,
+    "isBanner": false
   },
   {
     "id": "sets-de-perfumes-set-gucci-mini",
