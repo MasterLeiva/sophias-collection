@@ -5,6 +5,28 @@
     "bestseller": false,
     "isNew": true,
     "hidden": false,
+    "name": "Adidas Samba Jane Rosegold",
+    "category": "Calzado",
+    "price": 1950,
+    "isCover": false,
+    "isBanner": false,
+    "colors": [
+      {
+        "name": "Rosado",
+        "hex": "#f2b8c6",
+        "image": "img/Calzado/adidas-samba-jane-rosegold-rosado-14f03b.jpg"
+      }
+    ],
+    "image": "img/Calzado/adidas-samba-jane-rosegold-rosado-14f03b.jpg",
+    "id": "calzado-adidas-samba-jane-rosegold",
+    "createdAt": "2026-10-17T13:52:46.129Z"
+  },
+  {
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
     "name": "Longchamp Le Pliage size L",
     "category": "Bolsos",
     "price": 1890,
