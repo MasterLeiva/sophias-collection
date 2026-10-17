@@ -30,7 +30,7 @@
     "name": "Longchamp Le Pliage size L",
     "category": "Bolsos",
     "price": 1890,
-    "isCover": false,
+    "isCover": true,
     "isBanner": false,
     "colors": [
       {
@@ -301,7 +301,7 @@
     "image": "img/Bolsos/tote-bag-louis-vuitton-327b0e.jpg",
     "id": "bolsos-tote-bag-louis-vuitton",
     "createdAt": "2026-10-11T17:31:25.870Z",
-    "isCover": true,
+    "isCover": false,
     "isBanner": false
   },
   {
