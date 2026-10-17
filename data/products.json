@@ -3,6 +3,38 @@
     "salePrice": null,
     "description": "",
     "bestseller": false,
+    "isNew": true,
+    "hidden": false,
+    "name": "Longchamp Le Pliage size L",
+    "category": "Bolsos",
+    "price": 1890,
+    "isCover": false,
+    "isBanner": false,
+    "colors": [
+      {
+        "name": "Amarillo",
+        "hex": "#f2c94c",
+        "image": "img/Bolsos/longchamp-le-pliage-size-l-amarillo-52c0d2.jpg"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#ffffff",
+        "image": "img/Bolsos/longchamp-le-pliage-size-l-blanco-bcaa9b.jpg"
+      },
+      {
+        "name": "Azul",
+        "hex": "#2b4c9b",
+        "image": "img/Bolsos/longchamp-le-pliage-size-l-azul-40dd03.jpg"
+      }
+    ],
+    "image": "img/Bolsos/longchamp-le-pliage-size-l-amarillo-52c0d2.jpg",
+    "id": "bolsos-longchamp-le-pliage-size-l",
+    "createdAt": "2026-10-17T13:49:43.659Z"
+  },
+  {
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
     "isNew": false,
     "hidden": false,
     "name": "Vincha alo",
