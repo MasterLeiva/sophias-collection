@@ -5,6 +5,43 @@
     "bestseller": false,
     "isNew": true,
     "hidden": false,
+    "name": "Stanley",
+    "category": "Accesorios",
+    "price": 1190,
+    "isCover": false,
+    "isBanner": false,
+    "colors": [
+      {
+        "name": "Rosado",
+        "hex": "#f2b8c6",
+        "image": "img/Accesorios/stanley-rosado-200afa.jpg"
+      },
+      {
+        "name": "Negro",
+        "hex": "#1c1c1c",
+        "image": "img/Accesorios/stanley-negro-f46efb.jpg"
+      },
+      {
+        "name": "Azul",
+        "hex": "#2b4c9b",
+        "image": "img/Accesorios/stanley-azul-a4d328.jpg"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#ffffff",
+        "image": "img/Accesorios/stanley-blanco-b59f0f.jpg"
+      }
+    ],
+    "image": "img/Accesorios/stanley-rosado-200afa.jpg",
+    "id": "accesorios-stanley",
+    "createdAt": "2026-10-22T15:51:04.526Z"
+  },
+  {
+    "salePrice": null,
+    "description": "",
+    "bestseller": false,
+    "isNew": true,
+    "hidden": false,
     "name": "Adidas Samba Jane Rosegold",
     "category": "Calzado",
     "price": 1950,
