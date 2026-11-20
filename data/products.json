@@ -18,7 +18,7 @@
     "salePrice": null,
     "description": "",
     "bestseller": false,
-    "isNew": true,
+    "isNew": false,
     "hidden": false,
     "name": "Bolso Chanel",
     "category": "Carteras",
